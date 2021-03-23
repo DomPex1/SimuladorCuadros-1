@@ -34,11 +34,11 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label26 = new System.Windows.Forms.Label();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.C2CNUD = new System.Windows.Forms.NumericUpDown();
+            this.C4CNUD = new System.Windows.Forms.NumericUpDown();
+            this.C3CNUD = new System.Windows.Forms.NumericUpDown();
+            this.C5CNUD = new System.Windows.Forms.NumericUpDown();
+            this.C1CNUD = new System.Windows.Forms.NumericUpDown();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
@@ -56,12 +56,10 @@
             this.EntraronEnsNUD = new System.Windows.Forms.NumericUpDown();
             this.MarcosTb = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
-            this.EnEsperaEnsNUD = new System.Windows.Forms.NumericUpDown();
-            this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown10 = new System.Windows.Forms.NumericUpDown();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.numericUpDown11 = new System.Windows.Forms.NumericUpDown();
+            this.TerminadosNUD = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown20 = new System.Windows.Forms.NumericUpDown();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
@@ -109,13 +107,20 @@
             this.TiempoGeneral = new System.Windows.Forms.Timer(this.components);
             this.PaquetePb = new System.Windows.Forms.PictureBox();
             this.LlegadaPaquete = new System.Windows.Forms.Timer(this.components);
+            this.Carpintero1 = new System.Windows.Forms.Timer(this.components);
+            this.Carpintero2 = new System.Windows.Forms.Timer(this.components);
+            this.Carpintero3 = new System.Windows.Forms.Timer(this.components);
+            this.Carpintero4 = new System.Windows.Forms.Timer(this.components);
+            this.Carpintero5 = new System.Windows.Forms.Timer(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.PruebaNUD = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C2CNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C4CNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C3CNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C5CNUD)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C1CNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -128,9 +133,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntraronEnsNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcosTb)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EnEsperaEnsNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TerminadosNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).BeginInit();
@@ -148,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TotalMarcosNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalPaquetesNUD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaquetePb)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PruebaNUD)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -182,11 +187,11 @@
             this.panel3.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel3.Controls.Add(this.label26);
-            this.panel3.Controls.Add(this.numericUpDown5);
-            this.panel3.Controls.Add(this.numericUpDown4);
-            this.panel3.Controls.Add(this.numericUpDown3);
-            this.panel3.Controls.Add(this.numericUpDown2);
-            this.panel3.Controls.Add(this.numericUpDown1);
+            this.panel3.Controls.Add(this.C2CNUD);
+            this.panel3.Controls.Add(this.C4CNUD);
+            this.panel3.Controls.Add(this.C3CNUD);
+            this.panel3.Controls.Add(this.C5CNUD);
+            this.panel3.Controls.Add(this.C1CNUD);
             this.panel3.Controls.Add(this.pictureBox6);
             this.panel3.Controls.Add(this.pictureBox5);
             this.panel3.Controls.Add(this.pictureBox4);
@@ -208,40 +213,40 @@
             this.label26.TabIndex = 14;
             this.label26.Text = "Proceso de ensamblaje";
             // 
-            // numericUpDown5
+            // C2CNUD
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(270, 124);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown5.TabIndex = 9;
+            this.C2CNUD.Location = new System.Drawing.Point(270, 124);
+            this.C2CNUD.Name = "C2CNUD";
+            this.C2CNUD.Size = new System.Drawing.Size(100, 28);
+            this.C2CNUD.TabIndex = 9;
             // 
-            // numericUpDown4
+            // C4CNUD
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(664, 124);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown4.TabIndex = 8;
+            this.C4CNUD.Location = new System.Drawing.Point(664, 124);
+            this.C4CNUD.Name = "C4CNUD";
+            this.C4CNUD.Size = new System.Drawing.Size(100, 28);
+            this.C4CNUD.TabIndex = 8;
             // 
-            // numericUpDown3
+            // C3CNUD
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(467, 124);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown3.TabIndex = 7;
+            this.C3CNUD.Location = new System.Drawing.Point(467, 124);
+            this.C3CNUD.Name = "C3CNUD";
+            this.C3CNUD.Size = new System.Drawing.Size(100, 28);
+            this.C3CNUD.TabIndex = 7;
             // 
-            // numericUpDown2
+            // C5CNUD
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(865, 124);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown2.TabIndex = 6;
+            this.C5CNUD.Location = new System.Drawing.Point(865, 124);
+            this.C5CNUD.Name = "C5CNUD";
+            this.C5CNUD.Size = new System.Drawing.Size(100, 28);
+            this.C5CNUD.TabIndex = 6;
             // 
-            // numericUpDown1
+            // C1CNUD
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(70, 125);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown1.TabIndex = 5;
+            this.C1CNUD.Location = new System.Drawing.Point(70, 125);
+            this.C1CNUD.Name = "C1CNUD";
+            this.C1CNUD.Size = new System.Drawing.Size(100, 28);
+            this.C1CNUD.TabIndex = 5;
             // 
             // pictureBox6
             // 
@@ -412,28 +417,10 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Marcos";
             // 
-            // EnEsperaEnsNUD
-            // 
-            this.EnEsperaEnsNUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EnEsperaEnsNUD.Location = new System.Drawing.Point(1184, 209);
-            this.EnEsperaEnsNUD.Name = "EnEsperaEnsNUD";
-            this.EnEsperaEnsNUD.Size = new System.Drawing.Size(100, 28);
-            this.EnEsperaEnsNUD.TabIndex = 13;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1068, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(97, 24);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "En espera";
-            // 
             // numericUpDown10
             // 
             this.numericUpDown10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown10.Location = new System.Drawing.Point(1184, 243);
+            this.numericUpDown10.Location = new System.Drawing.Point(1184, 209);
             this.numericUpDown10.Name = "numericUpDown10";
             this.numericUpDown10.Size = new System.Drawing.Size(100, 28);
             this.numericUpDown10.TabIndex = 15;
@@ -442,7 +429,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(1065, 245);
+            this.label6.Location = new System.Drawing.Point(1065, 211);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(108, 24);
             this.label6.TabIndex = 16;
@@ -452,19 +439,19 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1062, 277);
+            this.label7.Location = new System.Drawing.Point(1061, 247);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(111, 24);
             this.label7.TabIndex = 17;
             this.label7.Text = "Terminados";
             // 
-            // numericUpDown11
+            // TerminadosNUD
             // 
-            this.numericUpDown11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown11.Location = new System.Drawing.Point(1184, 277);
-            this.numericUpDown11.Name = "numericUpDown11";
-            this.numericUpDown11.Size = new System.Drawing.Size(100, 28);
-            this.numericUpDown11.TabIndex = 18;
+            this.TerminadosNUD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TerminadosNUD.Location = new System.Drawing.Point(1184, 245);
+            this.TerminadosNUD.Name = "TerminadosNUD";
+            this.TerminadosNUD.Size = new System.Drawing.Size(100, 28);
+            this.TerminadosNUD.TabIndex = 18;
             // 
             // numericUpDown20
             // 
@@ -891,11 +878,28 @@
             this.LlegadaPaquete.Interval = 1;
             this.LlegadaPaquete.Tick += new System.EventHandler(this.LlegadaPaquete_Tick);
             // 
+            // Carpintero1
+            // 
+            this.Carpintero1.Interval = 1;
+            this.Carpintero1.Tick += new System.EventHandler(this.Carpintero1_Tick);
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1;
+            // 
+            // PruebaNUD
+            // 
+            this.PruebaNUD.Location = new System.Drawing.Point(1402, 209);
+            this.PruebaNUD.Name = "PruebaNUD";
+            this.PruebaNUD.Size = new System.Drawing.Size(100, 22);
+            this.PruebaNUD.TabIndex = 76;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1779, 921);
+            this.Controls.Add(this.PruebaNUD);
             this.Controls.Add(this.PaquetePb);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.TotalPaquetesNUD);
@@ -931,12 +935,10 @@
             this.Controls.Add(this.numericUpDown22);
             this.Controls.Add(this.numericUpDown23);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.numericUpDown11);
+            this.Controls.Add(this.TerminadosNUD);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.numericUpDown10);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.EnEsperaEnsNUD);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.MarcosTb);
             this.Controls.Add(this.EntraronEnsNUD);
@@ -954,11 +956,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C2CNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C4CNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C3CNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C5CNUD)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.C1CNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
@@ -974,9 +976,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EntraronEnsNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MarcosTb)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.EnEsperaEnsNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown11)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TerminadosNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown20)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown21)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown22)).EndInit();
@@ -996,6 +997,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TotalMarcosNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TotalPaquetesNUD)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.PaquetePb)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.PruebaNUD)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1015,21 +1017,19 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.NumericUpDown C2CNUD;
+        private System.Windows.Forms.NumericUpDown C4CNUD;
+        private System.Windows.Forms.NumericUpDown C3CNUD;
+        private System.Windows.Forms.NumericUpDown C5CNUD;
+        private System.Windows.Forms.NumericUpDown C1CNUD;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.NumericUpDown EntraronEnsNUD;
         private System.Windows.Forms.NumericUpDown MarcosTb;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.NumericUpDown EnEsperaEnsNUD;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.NumericUpDown numericUpDown10;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.NumericUpDown numericUpDown11;
+        private System.Windows.Forms.NumericUpDown TerminadosNUD;
         private System.Windows.Forms.NumericUpDown numericUpDown20;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
@@ -1083,6 +1083,13 @@
         private System.Windows.Forms.Timer TiempoGeneral;
         private System.Windows.Forms.PictureBox PaquetePb;
         private System.Windows.Forms.Timer LlegadaPaquete;
+        private System.Windows.Forms.Timer Carpintero1;
+        private System.Windows.Forms.Timer Carpintero2;
+        private System.Windows.Forms.Timer Carpintero3;
+        private System.Windows.Forms.Timer Carpintero4;
+        private System.Windows.Forms.Timer Carpintero5;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.NumericUpDown PruebaNUD;
     }
 }
 

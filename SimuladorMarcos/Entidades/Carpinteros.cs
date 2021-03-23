@@ -9,7 +9,7 @@ namespace SimuladorMarcos.Entidades
     public class Carpinteros
     {
         public int ID { get; set; }
-        public List<Cuadros> CuadrosATrabajar { get; set; }
+        public List<Cuadros> CuadrosATrabajar { get; set; } = new List<Cuadros>();
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using SimuladorMarcos.Entidades;
+﻿using SimuladorMarcos.BLL;
+using SimuladorMarcos.Entidades;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,10 +26,16 @@ namespace SimuladorMarcos
         public Random TiempoEns { get; set; } = new Random();
 
         //Control de carpinteros
-        public List<Carpinteros> Carpinteros { get; set; } = new List<Carpinteros>();
+        int contadorc1 = 0;
+
+        int Horac1, minutoc1, segundoc1;
+        public static List<Carpinteros> Carpinteros { get; set; } = new List<Carpinteros>();
         public int MovX { get; set; } = 111;
         int i = 0;
+        int idist = 0;
 
+        //Control de Almacen
+        public List<Cuadros> EsperaAlmacen { get; set; } = new List<Cuadros>(); //FIFO
         public Form1()
         {
             InitializeComponent();
@@ -109,6 +116,7 @@ namespace SimuladorMarcos
             }
             ProcesoEnsamblaje();
         }
+        //Metodos del proceso de ensamblaje
         public void ProcesoEnsamblaje()
         {
             int n = 0; 
@@ -123,13 +131,73 @@ namespace SimuladorMarcos
                 if (n == 7 || n == 8) { item.TiempoEnsamblaje = 5; }
                 if (n == 9 || n == 10) { item.TiempoEnsamblaje = 6; }
             }
+            DistribuirEnsamblaje();
         }
         public void DistribuirEnsamblaje()
         {
+            int indice = 0;
             foreach (var item in EsperaEnsamblaje)
             {
-                
+                idist++;
+                if(idist == 6) { idist = 1; }
+                Carpinteros c = new Carpinteros();
+                c = CarpinteroBLL.Buscar(idist);
+                c.CuadrosATrabajar.Add(item);
             }
+            EsperaEnsamblaje.RemoveRange(0,EsperaEnsamblaje.Count);
+            C1CNUD.Value = CarpinteroBLL.Buscar(1).CuadrosATrabajar.Count;
+            C2CNUD.Value = CarpinteroBLL.Buscar(2).CuadrosATrabajar.Count;
+            C3CNUD.Value = CarpinteroBLL.Buscar(3).CuadrosATrabajar.Count;
+            C4CNUD.Value = CarpinteroBLL.Buscar(4).CuadrosATrabajar.Count;
+            C5CNUD.Value = CarpinteroBLL.Buscar(5).CuadrosATrabajar.Count;
+            Carpintero1.Start();
+
+        }
+        public void SalidaDeCuadrosEnsamblados()
+        {
+            Carpinteros c1 = CarpinteroBLL.Buscar(1);
+            foreach (var item in c1.CuadrosATrabajar)
+            {
+
+            }
+        }
+        private void Carpintero1_Tick(object sender, EventArgs e)
+        {
+
+            segundoc1++;
+            Carpinteros c1 = CarpinteroBLL.Buscar(1);
+            int TIEMPO = c1.CuadrosATrabajar.Find(c => c.ID == 0).TiempoEnsamblaje;
+            if (Horac1 == TIEMPO)
+            {
+                Horac1 = 0;
+                minutoc1 = 0;
+                segundoc1 = 0;
+                EsperaAlmacen.Add(c1.CuadrosATrabajar.Find(c => c.ID != 0));
+                c1.CuadrosATrabajar.Remove(c1.CuadrosATrabajar.Find(c => c.ID != 0));
+                contadorc1++;
+            }
+
+
+            if (segundoc1 == 60)
+            {
+                minutoc1++;
+                segundoc1 = 0;
+            }
+            if(minutoc1 == 5)
+            {
+                Horac1++;
+                minutoc1 = 0;
+            }
+            C1CNUD.Value = CarpinteroBLL.Buscar(1).CuadrosATrabajar.Count;
+            TerminadosNUD.Value = EsperaAlmacen.Count;
+        }
+
+        //Fin de Metodos del proceso de ensamblaje
+
+        public void MetodoProcesoAlmacen()
+        {
+           TerminadosNUD.Value = EsperaAlmacen.Count;
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -146,5 +214,7 @@ namespace SimuladorMarcos
         {
             TiempoGeneral.Stop();
         }
+
+
     }
 }
