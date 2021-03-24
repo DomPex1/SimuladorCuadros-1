@@ -88,6 +88,11 @@ namespace SimuladorMarcos
         public List<Cuadros> TotalPasaron { get; set; } = new List<Cuadros>();
         public List<Cuadros> TotalATrabajar { get; set; } = new List<Cuadros>();
 
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
         public Form1()
         {
             InitializeComponent();
