@@ -152,6 +152,7 @@ namespace SimuladorMarcos
                 if(idist == 6) { idist = 1; }
                 Carpinteros c = new Carpinteros();
                 c = CarpinteroBLL.Buscar(idist);
+                item.ID = idist;
                 c.CuadrosATrabajar.Add(item);
             }
             EsperaEnsamblaje.RemoveRange(0,EsperaEnsamblaje.Count);
@@ -162,9 +163,9 @@ namespace SimuladorMarcos
             C5CNUD.Value = CarpinteroBLL.Buscar(5).CuadrosATrabajar.Count;
             Carpintero1.Start();
             Carpintero2.Start();
-            Carpintero3.Start();
-            Carpintero4.Start();
-            Carpintero5.Start();
+            //Carpintero3.Start();
+            //Carpintero4.Start();
+            //Carpintero5.Start();
 
         }
         public void SalidaDeCuadrosEnsamblados()
@@ -182,17 +183,22 @@ namespace SimuladorMarcos
         }
         private void Carpintero1_Tick(object sender, EventArgs e)
         {
-
+            int TIEMPO = 0;
+            Cuadros cuadroaux1 = new Cuadros();
             segundoc1++;
             Carpinteros c1 = CarpinteroBLL.Buscar(1);
-            int TIEMPO = c1.CuadrosATrabajar.Find(c => c.ID == 0).TiempoEnsamblaje;
+            if(c1.CuadrosATrabajar.Count != 0)
+                 cuadroaux1 = c1.CuadrosATrabajar.First();
+            if(cuadroaux1 != null)
+                 TIEMPO = cuadroaux1.TiempoEnsamblaje;
+
             if (Horac1 == TIEMPO)
             {
                 Horac1 = 0;
                 minutoc1 = 0;
                 segundoc1 = 0;
-                EsperaAlmacen.Add(c1.CuadrosATrabajar.Find(c => c.ID != 0));
-                c1.CuadrosATrabajar.Remove(c1.CuadrosATrabajar.Find(c => c.ID != 0));
+                EsperaAlmacen.Add(cuadroaux1);
+                c1.CuadrosATrabajar.Remove(cuadroaux1);
                 contadorc1++;
             }
 
@@ -208,23 +214,28 @@ namespace SimuladorMarcos
                 minutoc1 = 0;
             }
             C1CNUD.Value = CarpinteroBLL.Buscar(1).CuadrosATrabajar.Count;
-            TerminadosNUD.Value = EsperaAlmacen.Count;
         }
 
         //Fin de Metodos del proceso de ensamblaje     
         
         private void Carpintero2_Tick(object sender, EventArgs e)
         {
+            int TIEMPO = 0;
+            Cuadros cuadroaux2 = new Cuadros();
             segundoc2++;
             Carpinteros c2 = CarpinteroBLL.Buscar(2);
-            int TIEMPO = c2.CuadrosATrabajar.Find(c => c.ID == 0).TiempoEnsamblaje;
+            if (c2.CuadrosATrabajar.Count != 0)
+                cuadroaux2 = c2.CuadrosATrabajar.First();
+            if(cuadroaux2 != null)
+                TIEMPO = cuadroaux2.TiempoEnsamblaje;
+
             if (Horac2 == TIEMPO)
             {
                 Horac2 = 0;
                 minutoc2 = 0;
                 segundoc2 = 0;
-                EsperaAlmacen.Add(c2.CuadrosATrabajar.Find(c => c.ID != 0));
-                c2.CuadrosATrabajar.Remove(c2.CuadrosATrabajar.Find(c => c.ID != 0));
+                EsperaAlmacen.Add(cuadroaux2);
+                c2.CuadrosATrabajar.Remove(cuadroaux2);
                 contadorc2++;
             }
 
@@ -240,7 +251,6 @@ namespace SimuladorMarcos
                 minutoc2 = 0;
             }
             C2CNUD.Value = CarpinteroBLL.Buscar(2).CuadrosATrabajar.Count;
-            TerminadosNUD.Value = EsperaAlmacen.Count;
         }
 
         private void Carpintero3_Tick(object sender, EventArgs e)
